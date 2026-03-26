@@ -24,7 +24,7 @@ A reusable Terraform module for deploying AWS Lambda functions with a production
 
 ```hcl
 module "my_lambda" {
-  source = "github.com/your-username/terraform-aws-lambda"
+  source = "github.com/mifidon96/terraform-aws-lambda"
 
   function_name = "my-function"
   filename      = "lambda_function.zip"
@@ -39,7 +39,7 @@ module "my_lambda" {
 
 ```hcl
 module "my_lambda" {
-  source = "github.com/your-username/terraform-aws-lambda"
+  source = "github.com/mifidon96/terraform-aws-lambda"
 
   function_name = "my-function"
   filename      = "lambda_function.zip"
