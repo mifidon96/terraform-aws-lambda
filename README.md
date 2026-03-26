@@ -58,7 +58,7 @@ module "my_lambda" {
 
 ```hcl
 module "my_lambda" {
-  source = "github.com/your-username/terraform-aws-lambda"
+  source = "github.com/mifidon96/terraform-aws-lambda"
 
   function_name     = "process-uploads"
   filename          = "lambda_function.zip"
