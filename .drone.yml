@@ -1,0 +1,27 @@
+kind: pipeline
+type: docker
+name: terraform-validate
+
+steps:
+  - name: fmt-check
+    image: hashicorp/terraform:1.7
+    commands:
+      - terraform fmt -check -recursive
+
+  - name: validate-module
+    image: hashicorp/terraform:1.7
+    commands:
+      - terraform init -backend=false
+      - terraform validate
+
+  - name: validate-example
+    image: hashicorp/terraform:1.7
+    commands:
+      - cd examples/basic
+      - terraform init -backend=false
+      - terraform validate
+
+trigger:
+  event:
+    - push
+    - pull_request
